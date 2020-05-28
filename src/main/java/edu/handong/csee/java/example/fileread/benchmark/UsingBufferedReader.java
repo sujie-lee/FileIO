@@ -13,9 +13,9 @@ public class UsingBufferedReader {
 
         StopWatch.start();
     	
-    	String fileName = args[0];
-    	System.out.println("FileName: " + fileName);
-    	BufferedReader inputStream = new BufferedReader(new FileReader(fileName));
+    	String fileName1 = args[0];
+    	System.out.println("FileName: " + fileName1);
+    	BufferedReader inputStream = new BufferedReader(new FileReader(fileName1));
         //BufferedReader inputStream= new BufferedReader(new FileReader(DumpDataWriter.input1MB));
         
         while (inputStream.read()!=-1){}
@@ -25,42 +25,35 @@ public class UsingBufferedReader {
         
         inputStream.close();
 
-        /*
+        
         //-------------- Test reading 10 MB file. --------------------
         
         StopWatch.start();
-
-        BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input10MB));
+        
+        String fileName2 = args[1];
+    	System.out.println("FileName: " + fileName2);
+    	BufferedReader inputStream2 = new BufferedReader(new FileReader(fileName2));
+    	
+        //BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input10MB));
         while (inputStream2.read()!=-1){}
-
         long duration2 = StopWatch.stop();
         System.out.println(duration2 + " milsec");
-
         inputStream2.close();
 		
         
-        
+        /*
         //-------------- Test reading 100 MB file. --------------------
-
         StopWatch.start();
-
         BufferedReader inputStream3= new BufferedReader(new FileReader(DumpDataWriter.input100MB));
         while (inputStream3.read()!=-1){}
-
         long duration3 = StopWatch.stop();
         System.out.println(duration3 + " milsec");
         
         inputStream3.close();
-
-
         //-------------- Test reading 1000 MB file. --------------------
-
-
         StopWatch.start();
-
         BufferedReader inputStream4= new BufferedReader(new FileReader(DumpDataWriter.input1000MB));
         while (inputStream4.read()!=-1){}
-
         long duration4 = StopWatch.stop();
         System.out.println(duration4 + " milsec");
         
